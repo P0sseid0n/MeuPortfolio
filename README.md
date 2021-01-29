@@ -4,7 +4,7 @@
 <p> Inspirado no portfolio do @iuricode  </p>
 
 <img src="PortfolioDesktop.gif" alt="Portfolio Desktop" width="512"/>
-<img src="PortfolioMobile.gif" alt="Portfolio Mobile" width="256"/>
+<img src="PortfolioMobile.jfif" alt="Portfolio Mobile" height="268"/>
 
 <br>
 <br>
