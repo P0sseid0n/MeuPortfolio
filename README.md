@@ -1,7 +1,9 @@
 <h1> Meu portfolio </h1>
 
+<h4>Visitar: https://posseidon.netlify.app/</h4>
+
 <p> Website com meus projetos, conhecimentos, contato. Feito usando VueJS</p>
-<p> Inspirado no portfolio do @iuricode  </p>
+<p> Inspirado no portfolio do <a href="https://github.com/iuricode">iuricode</a></p>
 
 <img src="PortfolioDesktop.gif" alt="Portfolio Desktop" width="512"/>
 <img src="PortfolioMobile.jfif" alt="Portfolio Mobile" height="268"/>
@@ -23,7 +25,7 @@
 <h2>Tecnologias Usadas</h2>
 
 - VueJS
-- FontAwsome
+- FontAwesome
 - SCSS
 
 <hr>
