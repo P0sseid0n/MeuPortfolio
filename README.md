@@ -5,8 +5,7 @@
 <p> Website com meus projetos, conhecimentos, contato. Feito usando VueJS</p>
 <p> Inspirado no portfolio do <a href="https://github.com/iuricode">iuricode</a></p>
 
-<img src="PortfolioDesktop.gif" alt="Portfolio Desktop" width="512"/>
-<img src="PortfolioMobile.jfif" alt="Portfolio Mobile" height="268"/>
+<img src="PortfolioDesktop.gif" alt="Portfolio Desktop" width="512"/><img src="PortfolioMobile.jfif" alt="Portfolio Mobile" height="268"/>
 
 <br>
 <br>
