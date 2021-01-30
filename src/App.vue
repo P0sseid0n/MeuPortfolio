@@ -141,7 +141,7 @@
     <section id="contact">
         <div class="container">
             <h1>Contato</h1>
-            <a href="mailto:matheuspossidoniom@outlook.com" target="_blank" rel="noopener noreferrer" title="Email"> <font-awesome-icon :icon="['fas', 'envelope']"/></a>
+            <a href="mailto:posseidonking@hotmail.com" target="_blank" rel="noopener noreferrer" title="Email"> <font-awesome-icon :icon="['fas', 'envelope']"/></a>
             <a href="https://github.com/Posseidon0110" target="_blank" rel="noopener noreferrer" title="Github"> <font-awesome-icon :icon="['fab', 'github-square']"/></a>
             <a href="https://discord.com/users/237313382657687552" target="_blank" rel="noopener noreferrer" title="Discord"> <font-awesome-icon :icon="['fab', 'discord']"/></a>
             <a href="https://twitter.com/P0sseid0n" target="_blank" rel="noopener noreferrer" title="Twitter"> <font-awesome-icon :icon="['fab', 'twitter-square']"/></a>
