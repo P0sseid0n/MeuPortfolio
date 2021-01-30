@@ -1,6 +1,6 @@
-<h1> Meu portfolio </h1>
+<h1> Meu portfólio </h1>
 
-<h4>Visitar: https://posseidon.netlify.app/</h4>
+<h4>Site: https://posseidon.netlify.app/</h4>
 
 <p> Website com meus projetos, conhecimentos, contato. Feito usando VueJS</p>
 <p> Inspirado no portfolio do <a href="https://github.com/iuricode/portfolio">iuricode</a></p>
@@ -12,11 +12,11 @@
 
 <h2>Seções</h2>
 
-- <b>Inicio:</b> Começo do site com animação no meu nome.
+- <b>Início:</b> Começo do site com animação no meu nome.
 - <b>Projetos:</b> Alguns projetos meus.
 - <b>Conhecimentos:</b> Tecnologias que tenho conhecimento.
 - <b>Sobre mim:</b> Pequeno texto contando um pouco sobre mim.
-- <b>Contato:</b> Sites que pode me encontrar para entrar em contato.
+- <b>Contato:</b> Links para me contactar.
 
 <br>
 <br>

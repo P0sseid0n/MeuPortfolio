@@ -2,7 +2,7 @@
 <div id="app">
     <header>
         <div class="container">
-            <button id="logo" @click="moveScreen('start')"> Posseidon </button>
+            <button id="logo" @click="moveScreen('start')"> P0sseid0n </button>
             <nav>
                 <h1 @click="viewMenu()">
                     <span v-if="showMenu"><font-awesome-icon :icon="['fas', 'times']"/></span>
@@ -21,7 +21,7 @@
         <p>Olá, eu sou o</p> 
         <h1 @mouseenter="changeName()" @click="changeName()" > {{ nameDisplay }} <span>&#95;</span> </h1>
         <br>
-        <a href="https://github.com/Posseidon0110" target="_blank" rel="noopener noreferrer">
+        <a href="https://github.com/P0sseid0n" target="_blank" rel="noopener noreferrer">
             <font-awesome-icon :icon="['fab', 'github']"/> Meu GitHub
         </a>
         <h2>
@@ -35,13 +35,13 @@
                 <img src="https://s3.imgcdn.dev/CuCza.png" alt="N Words">
                 <div class="text">
                     <h1>N words</h1>
-                    <p>Contador de letras, plavras e linhas de um texto.</p>
+                    <p>Contador de letras, palavras e linhas de um texto.</p>
                     <p>Feito em <b>VueJS</b> com <b>HTML</b>, <b>CSS</b> e <b>Javascript</b>.</p>
                     <div class="links">
                         <a href="https://n-words.netlify.app/" target="_blank" rel="noopener noreferrer">
                             <font-awesome-icon :icon="['fas', 'link']"/> Website
                         </a>
-                        <a href="https://github.com/Posseidon0110/N-Words" target="_blank" rel="noopener noreferrer">
+                        <a href="https://github.com/P0sseid0n/N-Words" target="_blank" rel="noopener noreferrer">
                             <font-awesome-icon :icon="['fab', 'github']"/> Github
                         </a>
                     </div>
@@ -51,13 +51,13 @@
                 <img src="https://s3.imgcdn.dev/Cu4ML.png" alt="Mini Loja">
                 <div class="text">
                     <h1>Mini loja</h1>
-                    <p>Site simulando uma mini loja com sitema de carrinho.</p>
+                    <p>Site simulando uma mini loja com sistema de carrinho.</p>
                     <p>Feito em <b>HTML</b> e <b>CSS</b>.</p>
                     <div class="links">
                         <a href="https://miniloja-posseidon.netlify.app/" target="_blank" rel="noopener noreferrer">
                             <font-awesome-icon :icon="['fas', 'link']"/> Website
                         </a>
-                        <a href="https://github.com/Posseidon0110/Projeto-MiniLoja" target="_blank" rel="noopener noreferrer">
+                        <a href="https://github.com/P0sseid0n/Projeto-MiniLoja" target="_blank" rel="noopener noreferrer">
                             <font-awesome-icon :icon="['fab', 'github']"/> Github
                         </a>
                     </div>
@@ -73,13 +73,13 @@
                         <a href="https://paginacomercial01.netlify.app/" target="_blank" rel="noopener noreferrer">
                             <font-awesome-icon :icon="['fas', 'link']"/> Website
                         </a>
-                        <a href="https://github.com/Posseidon0110/Pagina-Comercial-01" target="_blank" rel="noopener noreferrer">
+                        <a href="https://github.com/P0sseid0n/Pagina-Comercial-01" target="_blank" rel="noopener noreferrer">
                             <font-awesome-icon :icon="['fab', 'github']"/> Github
                         </a>
                     </div>
                 </div>
             </div>
-            <a href="https://github.com/Posseidon0110?tab=repositories" target="_blank" rel="noopener noreferrer" id="more">Ver mais projetos.</a>
+            <a href="https://github.com/P0sseid0n?tab=repositories" target="_blank" rel="noopener noreferrer" id="more">Ver mais projetos.</a>
         </div>
     </section>
     <section id="knowledge">
@@ -134,22 +134,22 @@
     <section id="about">
         <div class="container">
             <h1>Sobre mim</h1>
-            <p>Meu nome é Matheus porém meu apelido na internet é Posseidon, tenho 16 anos, moro no Rio de Janeiro, Brasil.</p>
-            <p>Comecei na programação a alguns anos com desenvolviment de jogos porém decidi trocar pra area web. Então a alguns meses venho estudando diariamente novas tecnologias. Atualmente estou focado em aprender Javascript, front-end e back-end. Mas tenho planos para aprender outras linguagens, como Python. </p>
+            <p>Meu nome é Matheus, porém meu apelido na internet é P0sseid0n, tenho 16 anos, moro no Rio de Janeiro, Brasil.</p>
+            <p>Comecei na programação a alguns anos com desenvolvimento de jogos porém decidi trocar para a área web. Então a alguns meses venho estudando diariamente novas tecnologias. Atualmente estou focado em aprender Javascript, front-end e back-end. Mas tenho planos para aprender outras linguagens, como Python. </p>
         </div>
     </section>
     <section id="contact">
         <div class="container">
             <h1>Contato</h1>
             <a href="mailto:posseidonking@hotmail.com" target="_blank" rel="noopener noreferrer" title="Email"> <font-awesome-icon :icon="['fas', 'envelope']"/></a>
-            <a href="https://github.com/Posseidon0110" target="_blank" rel="noopener noreferrer" title="Github"> <font-awesome-icon :icon="['fab', 'github-square']"/></a>
+            <a href="https://github.com/P0sseid0n" target="_blank" rel="noopener noreferrer" title="Github"> <font-awesome-icon :icon="['fab', 'github-square']"/></a>
             <a href="https://discord.com/users/237313382657687552" target="_blank" rel="noopener noreferrer" title="Discord"> <font-awesome-icon :icon="['fab', 'discord']"/></a>
             <a href="https://twitter.com/P0sseid0n" target="_blank" rel="noopener noreferrer" title="Twitter"> <font-awesome-icon :icon="['fab', 'twitter-square']"/></a>
         </div>
     </section>
     <footer>
         <hr>
-        <h3>Feito por Posseidon&#169;</h3>
+        <h3>Feito por P0sseid0n&#169;</h3>
     </footer>
 </div>
 </template>
@@ -159,8 +159,8 @@ export default {
     name: 'App',
     data(){
         return{
-            name: 'Posseidon',
-            nameDisplay: 'Posseidon',
+            name: 'P0sseid0n',
+            nameDisplay: 'P0sseid0n',
             showMenu: false
         }
     },
@@ -169,8 +169,8 @@ export default {
             if(this.nameDisplay != this.name) return
             let deleting = true
 
-            if(this.name == 'Posseidon') this.name = 'Matheus'
-            else this.name = 'Posseidon'
+            if(this.name == 'P0sseid0n') this.name = 'Matheus'
+            else this.name = 'P0sseid0n'
 
             const typing = setInterval(() => {
                 if(this.nameDisplay.length <= 0) deleting = false
