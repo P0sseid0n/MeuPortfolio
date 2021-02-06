@@ -135,7 +135,9 @@
         <div class="container">
             <h1>Sobre mim</h1>
             <p>Meu nome é Matheus, porém meu apelido na internet é P0sseid0n, tenho 16 anos, moro no Rio de Janeiro, Brasil.</p>
-            <p>Comecei na programação a alguns anos com desenvolvimento de jogos porém decidi trocar para a área web. Então a alguns meses venho estudando diariamente novas tecnologias. Atualmente estou focado em aprender Javascript, front-end e back-end. Mas tenho planos para aprender outras linguagens, como Python. </p>
+            <p>A minha história na programação é bem curta e picotada. Faz alguns anos desde que tive contato com tecnologia e a paixão pela programação veio após alguns anos. Faz muito tempo desde que descobri que gostava de programar mas sempre eu começava estudar e após alguns dias eu parava. O meu primeiro curso foi o do <b>Curso em vídeo</b> mas sempre parava, cheguei recomeçar o curso de <b>Javascript</b> várias vezes com intervalos de meses, fora o curso de python que comecei a uns anos e não terminei.</p>
+            <p>No final de 2019 comecei fazer jogos em uma game engine visual chamada <b>Construct</b> mas de novo desanimei porém em poucos meses comecei estudar <b>Javascript</b>. Até então venho estudando todos os dias sempre estudando novas tecnologias.</p>
+            <p>A meta é nunca mais parar.</p>
         </div>
     </section>
     <section id="contact">
@@ -148,6 +150,9 @@
         </div>
     </section>
     <footer>
+        <button @click="moveScreen('start')">
+            <font-awesome-icon :icon="['fas', 'arrow-up']"/> Ir para o topo <font-awesome-icon :icon="['fas', 'arrow-up']"/>
+        </button>
         <hr>
         <h3>Feito por P0sseid0n&#169;</h3>
     </footer>
@@ -161,7 +166,10 @@ export default {
         return{
             name: 'P0sseid0n',
             nameDisplay: 'P0sseid0n',
-            showMenu: false
+            showMenu: false,
+            scrollY: 0,
+            scrollTarget: 0,
+            scrolling: ''
         }
     },
     methods:{
@@ -185,10 +193,42 @@ export default {
         },
 
         moveScreen(btn){
-            window.scroll({
-                top: document.getElementById(btn).offsetTop - 120,
-                behavior: 'smooth'
-            })
+            if(this.scrolling) return
+            let scrollY = window.scrollY || window.screenTop
+            let scrollTarget = document.getElementById(btn).offsetTop - 120
+
+            if(btn == 'projects') scrollTarget += 80
+            if(btn == 'knowledge') scrollTarget -= 30
+            if(btn == 'about') scrollTarget -= 20
+
+            if(scrollTarget > scrollY) this.scrolling = 'D'
+            else if(scrollTarget < scrollY) this.scrolling = 'U'
+            else return
+
+            const increaseScroll = 10
+
+            const interval = setInterval(() => {
+                if(scrollTarget == scrollY || !this.scrolling) {
+                    clearInterval(interval)
+                    this.scrolling = ''
+                }
+
+                if(this.scrolling == 'U'){
+                    const total = scrollY - scrollTarget
+                    if(total > increaseScroll) scrollY -= increaseScroll
+                    else scrollY -= total
+                    
+                } else {
+                    const total = scrollTarget - scrollY
+                    if(total > increaseScroll) scrollY += increaseScroll
+                    else scrollY += total
+                }
+
+                
+
+                window.scrollTo(0, scrollY)
+                
+            }) 
         },
 
         viewMenu(){
@@ -200,14 +240,18 @@ export default {
 <style lang="scss">
 @import url('https://fonts.googleapis.com/css2?family=Ubuntu:wght@300;400;500;700&display=swap');
 :root{
-    --main-blue: #3498db;
-    --main-blue-hovered: #2e84bd;
+    --blue: #3498db;
+    --blue-hovered: #2e84bd;
+    --white-background: rgb(220,220,230);
 }
 *{
     padding: 0;
     margin: 0;
     box-sizing: border-box;
     font-family: 'Ubuntu', sans-serif;
+}
+html, body {
+  scroll-behavior: smooth;
 }
 .container{
     max-width: 1024px;
@@ -245,6 +289,15 @@ header{
         font-size: 16px;
         margin: 0 18px;
         font-weight: 500;
+        transition: color .1s;
+    }
+
+    button:hover{
+        color:var(--blue);
+    }
+
+    button:active{
+        color:var(--blue-hovered);
     }
 
     #logo{
@@ -283,7 +336,7 @@ header{
 
     h1{
         font-size: 64px;
-        color: var(--main-blue);
+        color: var(--blue);
         display: inline-block;
 
         span{
@@ -298,8 +351,8 @@ header{
 
     a{
         display: inline-block;
-        border: 3px solid var(--main-blue);
-        color: var(--main-blue);
+        border: 3px solid var(--blue);
+        color: var(--blue);
         border-radius: 8px;
         padding: 12px 32px;
         margin-top: 56px;
@@ -309,7 +362,7 @@ header{
     }
 
     a:hover{
-        background-color: var(--main-blue);
+        background-color: var(--blue);
         color: rgb(235,235,235);
     }
 
@@ -358,8 +411,8 @@ header{
 
                 a{
                     display: inline-block;
-                    border: 3px solid var(--main-blue);
-                    color: var(--main-blue);
+                    border: 3px solid var(--blue);
+                    color: var(--blue);
                     border-radius: 8px;
                     padding: 8px 24px;
                     margin: 0 16px;
@@ -369,7 +422,7 @@ header{
                 }
 
                 a:hover{
-                    background-color: var(--main-blue);
+                    background-color: var(--blue);
                     color: rgb(235,235,235);
                 }
             }
@@ -385,14 +438,14 @@ header{
     }
 
     a#more{
-        color: var(--main-blue);
+        color: var(--blue);
         text-decoration: none;
         font-size: 20px;
         font-weight: 500;
     }
 
     a#more:hover{
-        color: var(--main-blue-hovered);
+        color: var(--blue-hovered);
         text-decoration: underline;
     }
 }
@@ -442,14 +495,15 @@ header{
         color: white;
         font-size: 40px;
         margin: 0 16px;
+        transition: color 0.3s;
     }
 
     a:hover{
-        color: var(--main-blue);
+        color: var(--blue);
     }
 
     a:active{
-        color: var(--main-blue-hovered);
+        color: var(--blue-hovered);
     }
 }
 
@@ -458,6 +512,26 @@ footer{
     color: white;
     text-align: center;
     padding-bottom: 48px;
+
+    button{
+        background: none;
+        color: white;
+        font-size: 18px;
+        border: 0;
+        margin-bottom: 8px;
+        outline: 0;
+        cursor: pointer;
+        font-weight: 500;
+        transition: color .1s;
+    }
+
+    button:hover{
+        color:var(--blue);
+    }
+
+    button:active{
+        color:var(--blue-hovered);
+    }
 
     hr{
         border: 1px solid rgba(200,200,200, 0.5);
