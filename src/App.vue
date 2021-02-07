@@ -135,9 +135,9 @@
         <div class="container">
             <h1>Sobre mim</h1>
             <p>Meu nome é Matheus, porém meu apelido na internet é P0sseid0n, tenho 16 anos, moro no Rio de Janeiro, Brasil.</p>
-            <p>A minha história na programação é bem curta e picotada. Faz alguns anos desde que tive contato com tecnologia e a paixão pela programação veio após alguns anos. Faz muito tempo desde que descobri que gostava de programar mas sempre eu começava estudar e após alguns dias eu parava. O meu primeiro curso foi o do <b>Curso em vídeo</b> mas sempre parava, cheguei recomeçar o curso de <b>Javascript</b> várias vezes com intervalos de meses, fora o curso de python que comecei a uns anos e não terminei.</p>
-            <p>No final de 2019 comecei fazer jogos em uma game engine visual chamada <b>Construct</b> mas de novo desanimei porém em poucos meses comecei estudar <b>Javascript</b>. Até então venho estudando todos os dias sempre estudando novas tecnologias.</p>
-            <p>A meta é nunca mais parar.</p>
+            <p>Estou estudando programação full-stack focado na web com <b>javascript</b>. Comecei estudar programação web em poucos meses então não possuo muitos projetos completos mas estudo todos os dias para sempre melhorar e aumentar essa lista.</p>
+            <p>A minha história na programação é bem curta e com varias pausas por desanimo. Faz muito tempo desde que descobri que gostava de programar mas sempre que eu começava estudar eu parava após alguns dias. O meu primeiro curso foi o do <b>Curso em vídeo</b> porém sempre parava, mas após varias tentantivas terminei o curso de <b>javascript</b> no ultimo ano e pretendo fazer o de <b>python</b> em alguns meses.</p>
+            <p>Antes de ir para a programação web eu gostava de fazer jogos e para fazer eu usava uma game engine visual chamada <b>Construct</b> porém desanimei. Até então venho estudando todos os dias <b>javascript</b> e novas tecnologias como <b>VueJs</b> para sempre melhorar.</p>
         </div>
     </section>
     <section id="contact">
@@ -197,9 +197,9 @@ export default {
             let scrollY = window.scrollY || window.screenTop
             let scrollTarget = document.getElementById(btn).offsetTop - 120
 
-            if(btn == 'projects') scrollTarget += 80
+            if(btn == 'projects') scrollTarget += 90
             if(btn == 'knowledge') scrollTarget -= 30
-            if(btn == 'about') scrollTarget -= 20
+            // if(btn == 'about') scrollTarget += 20
 
             if(scrollTarget > scrollY) this.scrolling = 'D'
             else if(scrollTarget < scrollY) this.scrolling = 'U'
