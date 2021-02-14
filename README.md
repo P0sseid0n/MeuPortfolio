@@ -1,5 +1,7 @@
 <h1> Meu portfólio </h1>
 
+[![Netlify Status](https://api.netlify.com/api/v1/badges/1140644c-f8f2-428c-a6c2-c5897102e082/deploy-status)](https://app.netlify.com/sites/posseidon/deploys)
+
 <h4>Site: https://posseidon.netlify.app/</h4>
 
 <p> Website com meus projetos, conhecimentos, contato. Feito usando VueJS</p>
