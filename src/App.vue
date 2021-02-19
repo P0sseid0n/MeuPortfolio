@@ -31,49 +31,19 @@
     <section id="projects">
         <div class="container">
             <h1>Projetos</h1>
-            <div class="project">
-                <img src="https://s3.imgcdn.dev/CuCza.png" alt="N Words">
+            <div :class="{'project': true, 'rev': index % 2 === 1}" v-for="(project, index) in projects" :key="project.image">
+                <img :src="project.image" alt="N Words">
                 <div class="text">
-                    <h1>N words</h1>
-                    <p>Contador de letras, palavras e linhas de um texto.</p>
-                    <p>Feito em <b>VueJS</b> com <b>HTML</b>, <b>CSS</b> e <b>Javascript</b>.</p>
+                    <h1> {{ project.title }} </h1>
+                    <p> {{ project.description }} </p>
+                    <p>
+                        Feito em <b v-for="tech in project.techs" :key="tech"> {{ tech }} </b> 
+                    </p>
                     <div class="links">
-                        <a href="https://n-words.netlify.app/" target="_blank" rel="noopener noreferrer">
+                        <a :href="project.website" target="_blank" rel="noopener noreferrer">
                             <font-awesome-icon :icon="['fas', 'link']"/> Website
                         </a>
-                        <a href="https://github.com/P0sseid0n/N-Words" target="_blank" rel="noopener noreferrer">
-                            <font-awesome-icon :icon="['fab', 'github']"/> Github
-                        </a>
-                    </div>
-                </div>
-            </div>
-            <div class="project rev">
-                <img src="https://s3.imgcdn.dev/Cu4ML.png" alt="Mini Loja">
-                <div class="text">
-                    <h1>Mini loja</h1>
-                    <p>Site simulando uma mini loja com sistema de carrinho.</p>
-                    <p>Feito em <b>HTML</b> e <b>CSS</b>.</p>
-                    <div class="links">
-                        <a href="https://miniloja-posseidon.netlify.app/" target="_blank" rel="noopener noreferrer">
-                            <font-awesome-icon :icon="['fas', 'link']"/> Website
-                        </a>
-                        <a href="https://github.com/P0sseid0n/Projeto-MiniLoja" target="_blank" rel="noopener noreferrer">
-                            <font-awesome-icon :icon="['fab', 'github']"/> Github
-                        </a>
-                    </div>
-                </div>
-            </div>
-            <div class="project">
-                <img src="https://s3.imgcdn.dev/CuItw.png" alt="Site comercial">
-                <div class="text">
-                    <h1>Template de site comercial</h1>
-                    <p>Template com base em sites comerciais, site de produtos...</p>
-                    <p>Feito em <b>HTML</b> e <b>CSS</b>.</p>
-                    <div class="links">
-                        <a href="https://paginacomercial01.netlify.app/" target="_blank" rel="noopener noreferrer">
-                            <font-awesome-icon :icon="['fas', 'link']"/> Website
-                        </a>
-                        <a href="https://github.com/P0sseid0n/Pagina-Comercial-01" target="_blank" rel="noopener noreferrer">
+                        <a :href="project.github" target="_blank" rel="noopener noreferrer">
                             <font-awesome-icon :icon="['fab', 'github']"/> Github
                         </a>
                     </div>
@@ -160,18 +130,19 @@
 </template>
 
 <script>
+import 'axios'
+import axios from 'axios'
 export default {
     name: 'App',
-    data(){
-        return{
-            name: 'P0sseid0n',
-            nameDisplay: 'P0sseid0n',
-            showMenu: false,
-            scrollY: 0,
-            scrollTarget: 0,
-            scrolling: ''
-        }
-    },
+    data: () => ({
+        name: 'P0sseid0n',
+        nameDisplay: 'P0sseid0n',
+        showMenu: false,
+        scrollY: 0,
+        scrollTarget: 0,
+        scrolling: '',
+        projects: []
+    }),
     methods:{
         changeName(){
             if(this.nameDisplay != this.name) return
@@ -234,6 +205,11 @@ export default {
         viewMenu(){
             this.showMenu = !this.showMenu
         }
+    },
+    created(){
+        axios.get('https://p0sseid0n-api.vercel.app/').then(response => {
+            this.projects = response.data.slice(0, 3)
+        })
     }
 }
 </script>
@@ -391,7 +367,8 @@ header{
         justify-content: space-between;
 
         img{
-            height: 200px;
+            // height: 200px;
+            width: 330px;
             border-radius: 8px;
             filter: brightness(75%);
         }
