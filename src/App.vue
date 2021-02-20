@@ -40,10 +40,10 @@
                         Feito em <b v-for="tech in project.techs" :key="tech"> {{ tech }} </b> 
                     </p>
                     <div class="links">
-                        <a :href="project.website" target="_blank" rel="noopener noreferrer">
+                        <a v-if="project.website" :href="project.website" target="_blank" rel="noopener noreferrer">
                             <font-awesome-icon :icon="['fas', 'link']"/> Website
                         </a>
-                        <a :href="project.github" target="_blank" rel="noopener noreferrer">
+                        <a v-if="project.github" :href="project.github" target="_blank" rel="noopener noreferrer">
                             <font-awesome-icon :icon="['fab', 'github']"/> Github
                         </a>
                     </div>
@@ -104,10 +104,9 @@
     <section id="about">
         <div class="container">
             <h1>Sobre mim</h1>
-            <p>Meu nome é Matheus, porém meu apelido na internet é P0sseid0n, tenho 16 anos, moro no Rio de Janeiro, Brasil.</p>
-            <p>Estou estudando programação full-stack focado na web com <b>javascript</b>. Comecei estudar programação web em poucos meses então não possuo muitos projetos completos mas estudo todos os dias para sempre melhorar e aumentar essa lista.</p>
-            <p>A minha história na programação é bem curta e com varias pausas por desanimo. Faz muito tempo desde que descobri que gostava de programar mas sempre que eu começava estudar eu parava após alguns dias. O meu primeiro curso foi o do <b>Curso em vídeo</b> porém sempre parava, mas após varias tentantivas terminei o curso de <b>javascript</b> no ultimo ano e pretendo fazer o de <b>python</b> em alguns meses.</p>
-            <p>Antes de ir para a programação web eu gostava de fazer jogos e para fazer eu usava uma game engine visual chamada <b>Construct</b> porém desanimei. Até então venho estudando todos os dias <b>javascript</b> e novas tecnologias como <b>VueJs</b> para sempre melhorar.</p>
+            <p>Meu nome é Matheus, porém meu apelido / nickname na internet é <b>P0sseid0n</b>, tenho 16 anos, sou do Rio de Janeiro, Brasil.</p>
+            <p>Estou estudando desenvolvimento web full-stack com <b>Javascript</b>. Comecei a estudar há poucos meses, então não possuo muitos projetos completos mas estudo todos os dias para sempre melhorar e aumentar essa lista.</p>
+            <p>A minha história na programação é bem curta e com várias pausas por desânimo. Faz muito tempo desde que descobri que gostava de programar, mas sempre que eu começava a estudar eu parava após alguns dias. Após várias tentativas terminei meu primeiro curso de <b>Javascript</b> do <b>Curso em vídeo</b>. Até então venho estudando todos os dias <b>Javascript</b> e novas tecnologias como <b>VueJs</b> para sempre melhorar.</p>
         </div>
     </section>
     <section id="contact">
@@ -169,8 +168,8 @@ export default {
             let scrollTarget = document.getElementById(btn).offsetTop - 120
 
             if(btn == 'projects') scrollTarget += 90
-            if(btn == 'knowledge') scrollTarget -= 30
-            // if(btn == 'about') scrollTarget += 20
+            if(btn == 'knowledge') scrollTarget -= 35
+            if(btn == 'about') scrollTarget -= 45
 
             if(scrollTarget > scrollY) this.scrolling = 'D'
             else if(scrollTarget < scrollY) this.scrolling = 'U'
@@ -207,6 +206,7 @@ export default {
         }
     },
     created(){
+        
         axios.get('https://p0sseid0n-api.vercel.app/').then(response => {
             this.projects = response.data.slice(0, 3)
         })
