@@ -31,7 +31,10 @@
     <section id="projects">
         <div class="container">
             <h1>Projetos</h1>
-            <div :class="{'project': true, 'rev': index % 2 === 1}" v-for="(project, index) in projects" :key="project.image">
+            <div v-if="projects.length == 0">
+                <h3> Carregando projetos</h3>
+            </div>
+            <div v-else :class="{'project': true, 'rev': index % 2 === 1}" v-for="(project, index) in projects" :key="project.image">
                 <img :src="project.image" alt="N Words">
                 <div class="text">
                     <h1> {{ project.title }} </h1>
@@ -335,12 +338,13 @@ header{
         text-decoration: none;
         font-weight: bold;
         transition: background-color .3s;
+
+        &:hover{
+            background-color: var(--blue);
+            color: rgb(235,235,235);
+        }
     }
 
-    a:hover{
-        background-color: var(--blue);
-        color: rgb(235,235,235);
-    }
 
     h2{
         font-size: 48px;
@@ -355,7 +359,7 @@ header{
 #projects{
     text-align: center;
     color: rgb(10,10,10);
-    background-color: rgb(225,225,235);
+    background-color: rgb(235,235,235);
 
     .container{
         max-width: 768px;
@@ -449,7 +453,7 @@ header{
 #about{
     text-align: center;
     color: rgb(10,10,10);
-    background-color: rgb(225,225,235);
+    background-color: rgb(235,235,235);
 
     .container{
         max-width: 768px;
@@ -526,7 +530,7 @@ footer{
     50%{ opacity: 0; }
 }
 
-@media screen and (max-width: 768px) {
+@media screen and (max-width: 640px) {
     header{
         #logo{
             font-size: 32px;
@@ -567,6 +571,7 @@ footer{
 
     #projects .project{
         flex-direction: column !important;
+        align-items: center;
 
         .text{
             margin-top: 16px;
